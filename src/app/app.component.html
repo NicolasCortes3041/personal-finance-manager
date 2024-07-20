@@ -1,0 +1,17 @@
+<div class="main-outlet flex flex-row">
+  <app-sidebar />
+  <div class="flex flex-col w-full">
+    <app-header class="w-full" />
+    <div class="bg-pages p-10 h-full">
+      <router-outlet />
+    </div>
+  </div>
+</div>
+
+<div class="notfound-outlet">
+  <router-outlet name="notfound"></router-outlet>
+</div>
+
+<div class="auth-outlet">
+  <router-outlet name="auth"></router-outlet>
+</div>

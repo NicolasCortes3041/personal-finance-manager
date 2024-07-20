@@ -1,0 +1,41 @@
+<div class="flex">
+  <div class="w-44 h-dvh bg-sidebar-buttons">
+    <div class="flex flex-col gap-12 mt-24 mx-3">
+      <a
+        id="btnDashboard"
+        class="flex flex-row gap-3 p-2 rounded-lg hover:bg-cornflower-blue-600"
+        [routerLink]="['/modules/dashboard']"
+        (click)="selectButton($event)"
+      >
+        <fa-icon class="color-white" [icon]="faHome"></fa-icon>
+        <span class="color-white cursor-pointer">Dashboard</span>
+      </a>
+      <a
+        id="btnProducts"
+        class="flex flex-row gap-3 p-2 rounded-lg hover:bg-cornflower-blue-600"
+        [routerLink]="['/modules/products']"
+        (click)="selectButton($event)"
+      >
+        <fa-icon class="color-white" [icon]="faClipboard"></fa-icon>
+        <span class="color-white cursor-pointer">Mis productos</span>
+      </a>
+      <a
+        id="btnProgress"
+        class="flex flex-row gap-3 p-2 rounded-lg hover:bg-cornflower-blue-600"
+        (click)="selectButton($event)"
+      >
+        <fa-icon class="color-white" [icon]="faArrowUpRightDots"></fa-icon>
+        <span class="color-white cursor-pointer">Mis avances</span>
+      </a>
+      <a
+        id="btnLogOut"
+        class="flex flex-row gap-3 p-2 rounded-lg hover:bg-cornflower-blue-600"
+        [routerLink]="['/modules/login']"
+        (click)="selectButton($event)"
+      >
+        <fa-icon class="color-white" [icon]="faCircleChevronLeft"></fa-icon>
+        <span class="color-white cursor-pointer">Log out</span>
+      </a>
+    </div>
+  </div>
+</div>
