@@ -1,0 +1,15 @@
+.notfound-outlet.active {
+  display: block;
+}
+
+.main-outlet.inactive {
+  display: none;
+}
+
+.auth-outlet.inactive {
+  display: none;
+}
+
+.bg-pages {
+  background-color: rgb(245, 248, 249);
+}
