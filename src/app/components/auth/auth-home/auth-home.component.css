@@ -1,0 +1,13 @@
+.animation-custom {
+  animation: 0.3s ease-in 0s 1 normal slidein;
+}
+
+@keyframes slidein {
+  from {
+    translate: -1vw 0;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}

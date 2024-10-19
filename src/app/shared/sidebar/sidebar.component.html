@@ -4,20 +4,20 @@
       <a
         id="btnDashboard"
         class="flex flex-row gap-3 p-2 rounded-lg hover:bg-cornflower-blue-600"
-        [routerLink]="['/modules/dashboard']"
+        [routerLink]="['/dashboard']"
         (click)="selectButton($event)"
       >
         <fa-icon class="color-white" [icon]="faHome"></fa-icon>
         <span class="color-white cursor-pointer">Dashboard</span>
       </a>
       <a
-        id="btnProducts"
+        id="btnIncome"
         class="flex flex-row gap-3 p-2 rounded-lg hover:bg-cornflower-blue-600"
-        [routerLink]="['/modules/products']"
+        [routerLink]="['/income']"
         (click)="selectButton($event)"
       >
         <fa-icon class="color-white" [icon]="faClipboard"></fa-icon>
-        <span class="color-white cursor-pointer">Mis productos</span>
+        <span class="color-white cursor-pointer">Mis ingresos</span>
       </a>
       <a
         id="btnProgress"
@@ -30,11 +30,11 @@
       <a
         id="btnLogOut"
         class="flex flex-row gap-3 p-2 rounded-lg hover:bg-cornflower-blue-600"
-        [routerLink]="['/modules/login']"
+        [routerLink]="['/login']"
         (click)="selectButton($event)"
       >
         <fa-icon class="color-white" [icon]="faCircleChevronLeft"></fa-icon>
-        <span class="color-white cursor-pointer">Log out</span>
+        <span class="color-white cursor-pointer">Cerrar sesión</span>
       </a>
     </div>
   </div>

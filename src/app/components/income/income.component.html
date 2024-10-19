@@ -1,0 +1,17 @@
+<div class="flex justify-between gap-x-6 py-5 px-3">
+  <span
+    for="newIncome"
+    class="block text-4xl font-medium leading-6 text-gray-900"
+  >
+    Mis ingresos
+  </span>
+  <button
+    type="submit"
+    class="py-2 px-3 border-solid border rounded-lg bg-cornflower-blue-600 text-white font-bold"
+  >
+    <fa-icon [icon]="faPlus"></fa-icon>
+    Nuevo
+  </button>
+</div>
+
+<app-table-list [header]="headerList" [dataSource]="data"></app-table-list>

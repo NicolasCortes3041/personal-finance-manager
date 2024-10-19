@@ -1,1 +1,60 @@
-<p>login works!</p>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+  <div class="my-10">
+    <label for="user" class="flex">Usuario: </label>
+    <input
+      id="user"
+      type="text"
+      formControlName="user"
+      class="w-full border-solid border rounded-lg p-2 text-cornflower-blue-950"
+    />
+    <div
+      *ngIf="loginForm.get('user')?.touched && loginForm.get('user')?.invalid"
+    >
+      <p
+        *ngIf="loginForm.get('user')?.hasError('required')"
+        class="text-red-500"
+      >
+        Es requerido
+      </p>
+      <p
+        *ngIf="loginForm.get('user')?.hasError('minlength')"
+        class="text-red-500"
+      >
+        largo minimo 3 caracteres
+      </p>
+    </div>
+  </div>
+  <div class="my-10">
+    <label for="pass" class="flex">Contraseña: </label>
+    <input
+      id="pass"
+      type="password"
+      formControlName="pass"
+      class="w-full border-solid border rounded-lg p-2 text-cornflower-blue-950"
+    />
+    <div
+      *ngIf="loginForm.get('pass')?.touched && loginForm.get('pass')?.invalid"
+    >
+      <p
+        *ngIf="loginForm.get('pass')?.hasError('required')"
+        class="text-red-500"
+      >
+        Es requerido
+      </p>
+      <p
+        *ngIf="loginForm.get('pass')?.hasError('minlength')"
+        class="text-red-500"
+      >
+        largo minimo 3 caracteres
+      </p>
+    </div>
+  </div>
+  <div class="mt-16 grid gap-6 text-center">
+    <button
+      type="submit"
+      class="w-full border-solid border border-cornflower-blue-50 h-10 rounded-lg hover:bg-cornflower-blue-600"
+    >
+      Ingresar
+    </button>
+  </div>
+</form>

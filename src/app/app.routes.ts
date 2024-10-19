@@ -4,17 +4,17 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'modules',
+    redirectTo: 'dashboard',
     pathMatch: 'full',
   },
   {
-    path: 'modules',
+    path: '',
     loadChildren: () =>
       import('./components/components.module').then((m) => m.ComponentsModule),
   },
   { path: 'notfound', component: PageNotFoundComponent, outlet: 'notfound' },
   {
     path: '**',
-    redirectTo: '/(notfound:notfound)'
+    redirectTo: '/(notfound:notfound)',
   },
 ];

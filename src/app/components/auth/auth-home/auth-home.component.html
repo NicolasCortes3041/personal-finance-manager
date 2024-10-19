@@ -1,0 +1,44 @@
+<div class="flex flex-row">
+  <div
+    class="lg:w-1/2 hidden sm:hidden md:hidden lg:grid h-dvh place-content-center bg-cornflower-blue-500 text-cornflower-blue-50"
+  >
+    <div class="text-center">
+      <span class="text-6xl">
+        Bienvenido al sistema que te ayudara a order tus finanzas
+      </span>
+    </div>
+  </div>
+  <div
+    class="w-full flex flex-col items-center justify-center lg:w-1/2 h-dvh bg-cornflower-blue-950 text-cornflower-blue-50"
+  >
+    <div class="w-3/4 hidden md:flex lg:hidden mb-6 text-center">
+      <span class="text-4xl">
+        Bienvenido al sistema que te ayudara a order tus finanzas
+      </span>
+    </div>
+    <div
+      class="w-3/4 border-solid border rounded-md border-cornflower-blue-50 bg-cornflower-blue-500 p-10"
+    >
+      <div class="text-center mb-10">
+        <span class="text-3xl">Credenciales</span>
+      </div>
+
+      <ng-container *ngIf="isLoggin; else registerContainer">
+        <div class="animation-custom">
+          <app-login></app-login>
+        </div>
+      </ng-container>
+      <ng-template #registerContainer>
+        <div class="animation-custom">
+          <app-register></app-register>
+        </div>
+      </ng-template>
+
+      <div class="text-center mt-10">
+        <span>
+          <button (click)="setComponent()">{{ textAction }}</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

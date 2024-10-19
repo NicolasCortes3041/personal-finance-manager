@@ -18,27 +18,36 @@ export class AppComponent {
 
   faCoffee = faCoffee;
 
-  constructor(private router: Router, private documentService: DocumentService) {
-    this.router.events.subscribe(event => {
+  constructor(
+    private router: Router,
+    private documentService: DocumentService
+  ) {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        const notFoundRouteActive = this.router.url.includes('(notfound:');
-        const nativeDocument = this.documentService.nativeDocument;
-
-        if (nativeDocument) {
-          const mainOutlet = nativeDocument.querySelector('.main-outlet');
-          const notFoundOutlet = nativeDocument.querySelector('.notfound-outlet');
-
-          if (mainOutlet && notFoundOutlet) {
-            if (notFoundRouteActive) {
-              mainOutlet.classList.add('inactive');
-              notFoundOutlet.classList.add('active');
-            } else {
-              mainOutlet.classList.remove('inactive');
-              notFoundOutlet.classList.remove('active');
-            }
-          }
-        }
+        this.updateOutletVisibility();
       }
     });
+  }
+
+  private updateOutletVisibility(): void {
+    const nativeDocument = this.documentService.nativeDocument;
+    if (!nativeDocument) return;
+
+    const mainOutlet = nativeDocument.querySelector('.main-outlet');
+    const notFoundOutlet = nativeDocument.querySelector('.notfound-outlet');
+    const authOutlet = nativeDocument.querySelector('.auth-outlet');
+    if (!mainOutlet || !notFoundOutlet || !authOutlet) return;
+
+    const notFoundRouteActive = this.router.url.includes('(notfound:');
+    const authRouteActive = this.router.url.includes('auth');
+
+    mainOutlet.classList.toggle(
+      'inactive',
+      notFoundRouteActive || authRouteActive
+    );
+    authOutlet.classList.toggle('inactive', !authRouteActive);
+    authOutlet.classList.toggle('active', authRouteActive);
+    notFoundOutlet.classList.toggle('inactive', !notFoundRouteActive);
+    notFoundOutlet.classList.toggle('active', notFoundRouteActive);
   }
 }

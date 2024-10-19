@@ -1,0 +1,23 @@
+<div>
+  <div class="flex justify-between py-5 px-3">
+    <span class="font-bold" *ngFor="let item of header">
+      {{ item }}
+    </span>
+  </div>
+  <div class="w-full bg-gray-500 h-[1px]"></div>
+
+  <ul id="list-data">
+    <li *ngFor="let data of dataSource">
+      <div class="flex justify-between py-5 px-3">
+        <span class="py-2">{{ data.item1 }}</span>
+        <span class="py-2">{{ data.item2 }}</span>
+        <button
+          class="bg-cornflower-blue-600 text-white py-2 px-3 border rounded-lg"
+        >
+          <fa-icon [icon]="faPenEdit"></fa-icon>
+        </button>
+      </div>
+      <div class="w-full bg-gray-300 h-[1px]"></div>
+    </li>
+  </ul>
+</div>
